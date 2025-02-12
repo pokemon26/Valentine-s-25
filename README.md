@@ -1,1 +1,128 @@
-# Valentine-s-25
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            background-color: skyblue;
+            text-align: center;
+            font-family: "Times New Roman", serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+        }
+        .question {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .option {
+            display: inline-block;
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px gray;
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+        .hidden {
+            display: none;
+        }
+        .emoji {
+            font-size: 167px; /* Reduced size 3 times */
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .click-text {
+            font-size: 24px;
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Times New Roman", serif;
+        }
+        .love-message {
+            font-size: 32px;
+            font-style: italic;
+        }
+        .no-hearts {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts" id="hearts"></div>
+
+    <!-- First screen -->
+    <div id="questionScreen" class="container">
+        <div class="question">Will you be my Valentine?</div>
+        <div class="option" onclick="nextScreen()">haan</div>
+        <div class="option" onclick="nextScreen()">HAAN</div>
+    </div>
+
+    <!-- Second screen with Smaller 💌 emoji -->
+    <div id="emojiScreen" class="container hidden">
+        <div class="emoji" onclick="openMessage()">💌</div>
+        <div class="click-text">Click on the heart!</div>
+    </div>
+
+    <!-- Love Letter Screen -->
+    <div id="loveMessage" class="container hidden">
+        <h1 class="love-message">I love you ❤</h1>
+    </div>
+
+    <script>
+        function nextScreen() {
+            document.getElementById("questionScreen").classList.add("hidden");
+            document.getElementById("emojiScreen").classList.remove("hidden");
+        }
+
+        function openMessage() {
+            document.getElementById("emojiScreen").classList.add("hidden");
+            document.getElementById("loveMessage").classList.remove("hidden");
+            document.getElementById("hearts").classList.add("no-hearts"); // Remove hearts on last screen
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.innerHTML = "❤";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.querySelector(".hearts").appendChild(heart);
+            }
+        }
+        createHearts();
+    </script>
+
+</body>
+</html>
+![image](https://github.com/user-attachments/assets/8d18ce90-6480-4add-a988-4609f8a5a40f)
