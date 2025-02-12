@@ -9,7 +9,6 @@
             background-color: skyblue;
             text-align: center;
             font-family: "Times New Roman", serif;
-            font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -57,19 +56,23 @@
             display: none;
         }
         .emoji {
-            font-size: 167px; /* Reduced size 3 times */
+            font-size: 167px;
             cursor: pointer;
             margin-bottom: 15px;
         }
         .click-text {
             font-size: 24px;
-            font-weight: bold;
-            font-style: italic;
             font-family: "Times New Roman", serif;
         }
-        .love-message {
-            font-size: 32px;
-            font-style: italic;
+        .poem-container {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+            font-size: 24px;
+            line-height: 1.5;
+            overflow-y: auto; /* Allows scrolling if needed */
+            max-height: 80vh; /* Prevents overflow */
+            padding: 20px;
         }
         .no-hearts {
             display: none;
@@ -93,9 +96,68 @@
         <div class="click-text">Click on the heart!</div>
     </div>
 
-    <!-- Love Letter Screen -->
+    <!-- Love Letter Screen with Poem -->
     <div id="loveMessage" class="container hidden">
-        <h1 class="love-message">I love you ❤</h1>
+        <div class="poem-container">
+            <p>I'll forever be grateful,<br>
+            To destiny's will<br>
+            For I saw the guy I'd love for life,<br>
+            On the ninth of April.<br><br>
+
+            A face so pretty<br>
+            With intoxicating eyes<br>
+            My mind said hello,<br>
+            My heart felt shy<br>
+            The same old compliments<br>
+            I'll repeat and revise<br>
+            With paragraphs and poems<br>
+            For the rest of our lives.<br><br>
+
+            I started listening to your voice<br>
+            I haven't stopped ever since,<br>
+            It wakes me up, it puts me to sleep<br>
+            It brings me a lot of peace.<br>
+            From recorded voice notes<br>
+            To singing with you,<br>
+            Life feels like a comfort playlist,<br>
+            Life is painted sky blue.<br><br>
+
+            You pull me closer,<br>
+            My head on your heart,<br>
+            Your essence, it holds me tight enough<br>
+            Even when we're apart.<br>
+            In monsoon rains and sweaty summers,<br>
+            My jackets smell like heaven and above<br>
+            Deep embedded in my skin,<br>
+            Everyday, I smell of your love.<br><br>
+
+            When I can't hold you in my arms,<br>
+            I hold a warm cup of tea.<br>
+            I tell myself there indeed is,<br>
+            An invisible string tying you to me.<br>
+            Your sweet taste of love<br>
+            Puts me under cotton candy skies,<br>
+            Your constant care and adoration<br>
+            Fills my heart with giggles and smiles.<br><br>
+
+            Hugging you is like<br>
+            Rushing back home,<br>
+            Your hand in mine<br>
+            Will always be my comfort zone.<br>
+            Help me cross the road,<br>
+            Wipe my tears away<br>
+            Plant a soft kiss on my cheek,<br>
+            See how it makes my day..<br><br>
+
+            I see you, I hear you,<br>
+            I smell you all around;<br>
+            I taste you, I touch you,<br>
+            With no limits bound.<br>
+            With all my soul,<br>
+            And the entirety of my life,<br>
+            I love you from the core of my heart,<br>
+            More than just senses five.</p>
+        </div>
     </div>
 
     <script>
@@ -125,4 +187,3 @@
 
 </body>
 </html>
-![image](https://github.com/user-attachments/assets/8d18ce90-6480-4add-a988-4609f8a5a40f)
